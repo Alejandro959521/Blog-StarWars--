@@ -1,10 +1,11 @@
 
-import React from "react";
-
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 
 function Card2({ data3 }) {
     const navigate = useNavigate()
+    const { store, actions } = useContext(Context)
     return (
         <div className="card" style={{ minWidth: "18rem" }}>
             <div>
@@ -23,7 +24,13 @@ function Card2({ data3 }) {
                         navigate("/planets/" + data3.uid)
                     }} >Learn More!</button>
 
-                    <button className="border border-warning m-1 fa-regular fa-heart heart text-warning">  </button>
+                    <button className={`border border-warning m-1 fa-heart heart ${actions.boton(data3.properties.name) ? "fa-solid" : "fa-regular"}`}
+                    onClick={() => { actions.agregado(data3.properties.name) }}
+                    >  </button>
+                    {/* <button className={`border border-warning m-1 fa-heart  heart ${actions.boton(data.properties.name) ? "fa-solid" : "fa-regular"}`}
+            onClick={() => { actions.agregado(data.properties.name) }}
+          >
+          </button> */}
                 </div>
             </div>
         </div>

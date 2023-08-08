@@ -147,7 +147,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			agregado: (nombre) => {
 
-				//if (getStore().contador==0) setStore({ listado: ["Empty"] })
+				
 
 				if (getStore().listado.includes(nombre) == false) {
 					setStore({ listado: [...getStore().listado, nombre] })

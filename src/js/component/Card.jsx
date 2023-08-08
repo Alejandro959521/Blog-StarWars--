@@ -1,5 +1,4 @@
 
-
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
@@ -24,7 +23,7 @@ function Card({ data }) {
             navigate("/character/" + data.uid)
           }} >Learn More!</button>
 
-          <button className={`border border-warning m-1 fa-heart  heart ${actions.boton(data.properties.name) ? "fa-solid" : "fa-regular"}`}
+          <button className={`border border-warning m-1 fa-heart heart ${actions.boton(data.properties.name) ? "fa-solid" : "fa-regular"}`}
             onClick={() => { actions.agregado(data.properties.name) }}
           >
           </button>
