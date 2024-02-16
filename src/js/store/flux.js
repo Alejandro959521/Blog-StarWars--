@@ -26,7 +26,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 					const respond = await fetch(url + "/people/", options);
 					console.log(respond)
-
+ 
 					const body = await respond.json();
 					//console.log(body);
 
@@ -36,7 +36,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					}
 					setStore({ Characters: body.results })
-
+				
 				} catch (error) {
 					console.log(error);
 
@@ -56,12 +56,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					}
 					const respond = await fetch(url + "/people/" + id, options);
-					console.log(respond)
+					
 
 					const body = await respond.json();
-					console.log("funcion getDetalle", body);
+					
 
 					setStore({ Detalles: [...getStore().Detalles, body.result] })
+					
 
 				} catch (error) {
 					console.log(error);
@@ -141,7 +142,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getDetalladoP: (id) => {
 				let store = getStore()
 				let a2 = store.DetallesP.filter(item => item.uid == id)[0]
-				return a2 ? a2 : {}
+				return a2 ? a2 : {}      
 
 			},
 

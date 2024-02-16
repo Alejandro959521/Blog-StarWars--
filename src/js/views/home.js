@@ -8,8 +8,6 @@ export const Home = (props) => {
 
 	const { store, actions } = useContext(Context)
 
-
-
 	return (
 		<div >
 			<h1 className="text-danger">Characters</h1>
@@ -17,7 +15,7 @@ export const Home = (props) => {
 				{
 					store.Detalles.map((Character, index) => (
 
-						<Card data={Character} key={index} />
+						<Card data={Character} key={index}/>
 					))
 				}
 
@@ -31,8 +29,6 @@ export const Home = (props) => {
 						<Card2 data3={Planets} key={index} />
 					))
 				}
-
-
 			</div>
 		</div>
 	);

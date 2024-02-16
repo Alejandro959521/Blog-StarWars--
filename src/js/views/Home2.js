@@ -12,18 +12,21 @@ export const Home2 = (props) => {
     let getdato = async () => {
 
         let valor = actions.getDetallado(params.userId)
-        console.log(valor)
+        
         if (valor["uid"]) {
             setData(valor)
+            console.log("aqui el primero",valor)
             return
+
         }
         await actions.getDetalles(params.userId)
         valor = actions.getDetallado(params.userId)
         setData(valor)
-        console.log(valor)
 
-
+        console.log("aqui el segundo",valor)
+        store.Detalles = [];
     }
+
     useEffect(() => {
         getdato()
     }, [params.userId])
