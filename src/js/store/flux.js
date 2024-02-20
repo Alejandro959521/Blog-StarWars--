@@ -148,8 +148,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			agregado: (nombre) => {
 
-				
-
 				if (getStore().listado.includes(nombre) == false) {
 					setStore({ listado: [...getStore().listado, nombre] })
 					getStore().contador++
@@ -165,9 +163,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			boton: (nombre) => {
 
 				return getStore().listado.includes(nombre)
-
-
-
 			}
 		}
 	};

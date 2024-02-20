@@ -41,7 +41,6 @@ export const Navbar = () => {
 										{item}
 										<span className="fa fa-trash fa-fw text-dark " onClick={() => actions.eliminado(item)} ></span>
 
-
 									</a> </li>
 								)
 							})
